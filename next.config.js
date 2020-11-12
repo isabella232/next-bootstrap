@@ -1,4 +1,9 @@
+const path = require('path');
+
 module.exports = {
+  sassOptions: {
+    includePaths: [path.resolve(__dirname, 'scss')]
+  },
   webpack: (config) => {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')
