@@ -1,19 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import Layout from '~components/Layout';
-import { foo } from '~constants/general';
+// import { foo } from '~constants/general';
+// import { api } from '~config/api';
 
-console.log(foo);
+// console.log(foo);
 export default function FirstPost() {
-  const [test, setTest] = useState('hola');
-  useEffect(() => {
-    setTest('chao');
-    console.log(test, foo);
-  }, []);
+  // const [test, setTest] = useState('hola');
+  // useEffect(() => {
+  //   setTest('chao');
+  //   console.log(test, foo, api);
+  // }, [test]);
   return (
     <Layout>
       <Head>
