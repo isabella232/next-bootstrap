@@ -34,7 +34,7 @@
     "@types/react": "^16.9.56",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
-    "@wolox/eslint-config-typescript": "^1.1.1",
+    "@wolox/eslint-config-typescript": "^1.1.2",
     "eslint": "^7.13.0",
     "eslint-config-wolox": "^4.0.0",
     "eslint-config-wolox-react": "^2.1.2",

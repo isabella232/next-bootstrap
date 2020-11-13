@@ -12,7 +12,7 @@ interface Props {
 // Example dynamic route component
 function ExampleDetail({ data }: Props) {
   const { query } = useRouter();
-  const queryShow = query && Object.entries(query).find(key => key[0] === 'foo');
+  const queryShow = query && Object.entries(query).find((key) => key[0] === 'foo');
 
   return (
     <Layout title={`Example ${data.id}`} className="column center middle">
@@ -31,9 +31,9 @@ function ExampleDetail({ data }: Props) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Replace with your api call obtaining a /get list to know the possible ids
-  const paths: { params: { id: string } }[] = await new Promise(resolve => {
+  const paths: { params: { id: string } }[] = await new Promise((resolve) => {
     resolve(
-      [1, 2].map(item => ({
+      [1, 2].map((item) => ({
         params: {
           id: `${item}`
         }
@@ -47,9 +47,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async (context) => {
   // Replace with your api call obtaining the possibly /get/{id} item
-  const data = await new Promise(resolve => {
+  const data = await new Promise((resolve) => {
     resolve(context.params);
   });
   return {

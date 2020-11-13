@@ -51,7 +51,7 @@ function Home({ foo }: Props) {
 // context argument of `getServerSideProps` contains utilities like getting the query params
 export const getServerSideProps: GetServerSideProps = async () => {
   // replace promise for your service
-  const foo = await new Promise(resolve => {
+  const foo = await new Promise((resolve) => {
     resolve('Example');
   });
   return { props: { foo } };

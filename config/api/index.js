@@ -29,7 +29,7 @@ const api = create({
 /*
  * TODO Use this function to create an api with another backend/service
  */
-export const createApi = apiUrl =>
+export const createApi = (apiUrl) =>
   create({
     baseURL: apiUrl,
     ...baseApiConfig
@@ -41,7 +41,7 @@ export const createApi = apiUrl =>
 // eslint-disable-next-line no-unused-vars, prettier/prettier, @typescript-eslint/no-unused-vars
 export const apiSetup = dispatch => {
   // Response transform to deserialize snake_case backend structure
-  api.addResponseTransform(response => {
+  api.addResponseTransform((response) => {
     if (response.ok) {
       response.data = response.data ? deserializer.serialize(response.data) : null;
     } else {
@@ -51,13 +51,13 @@ export const apiSetup = dispatch => {
   });
 
   // Request transform to serialize the body to camel_case backend structure
-  api.addRequestTransform(request => {
+  api.addRequestTransform((request) => {
     if (request.params) {
       request.params = serializer.serialize(request?.params);
     }
   });
 
-  api.addMonitor(response => {
+  api.addMonitor((response) => {
     if (response.status === STATUS_CODES.unauthorized) {
       /*
        * TODO: These callbacks should only be called if no other callback was asigned for the response.
@@ -66,7 +66,7 @@ export const apiSetup = dispatch => {
     }
   });
 
-  api.addMonitor(response => {
+  api.addMonitor((response) => {
     if (response.problem === API_PROBLEMS.networkError) {
       // TODO: These callbacks should only be called if no other callback was asigned for the response.
     }
