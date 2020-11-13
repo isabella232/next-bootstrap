@@ -1,6 +1,4 @@
-.unlabeled-field {
-  margin-top: 30px;
-}
+@import 'variables/colors';
 
 .full-width {
   width: 100%;
@@ -12,4 +10,13 @@
 
 .quarter-width {
   width: 25%;
+}
+
+.link {
+  color: $blue;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
