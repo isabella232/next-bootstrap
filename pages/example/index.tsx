@@ -7,6 +7,7 @@ import { PATHS } from '~constants/paths';
 function Example() {
   const [foo, setFoo] = useState('');
 
+  // Hooks works
   useEffect(() => {
     setFoo('Example Page');
   }, []);

@@ -10,7 +10,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js '**/*.{js,jsx,ts,tsx}'",
     "lint-fix": "./node_modules/eslint/bin/eslint.js src --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     "lint-scss": "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
-    "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep \\.ts\\|\\.tsx\\.jsx\\|\\.js\\?$ | xargs eslint"
+    "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep -e \\.js$ -e \\.ts$ -e \\.tsx$ | xargs eslint"
   },
   "dependencies": {
     "apisauce": "^2.0.0",
