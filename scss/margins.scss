@@ -30,8 +30,8 @@ $max-left: 50;
 // Top margins
 
 @if $min-top > 0 {
-  $unscaled-min-top: $min-top / $scale;
-  $unscaled-max-top: $max-top / $scale;
+  $unscaled-min-top: calc($min-top / $scale);
+  $unscaled-max-top: calc($max-top / $scale);
 
   @for $i from $unscaled-min-top through $unscaled-max-top {
     .m-top-#{$i} {
@@ -43,8 +43,8 @@ $max-left: 50;
 // Right margins
 
 @if $min-right > 0 {
-  $unscaled-min-right: $min-right / $scale;
-  $unscaled-max-right: $max-right / $scale;
+  $unscaled-min-right: calc($min-right / $scale);
+  $unscaled-max-right: calc($max-right / $scale);
 
   @for $i from $unscaled-min-right through $unscaled-max-right {
     .m-right-#{$i} {
@@ -56,8 +56,8 @@ $max-left: 50;
 // Bottom margins
 
 @if $min-bottom > 0 {
-  $unscaled-min-bottom: $min-bottom / $scale;
-  $unscaled-max-bottom: $max-bottom / $scale;
+  $unscaled-min-bottom: calc($min-bottom / $scale);
+  $unscaled-max-bottom: calc($max-bottom / $scale);
 
   @for $i from $unscaled-min-bottom through $unscaled-max-bottom {
     .m-bottom-#{$i} {
@@ -69,8 +69,8 @@ $max-left: 50;
 // Left margins
 
 @if $min-left > 0 {
-  $unscaled-min-left: $min-left / $scale;
-  $unscaled-max-left: $max-left / $scale;
+  $unscaled-min-left: calc($min-left / $scale);
+  $unscaled-max-left: calc($max-left / $scale);
 
   @for $i from $unscaled-min-left through $unscaled-max-left {
     .m-left-#{$i} {

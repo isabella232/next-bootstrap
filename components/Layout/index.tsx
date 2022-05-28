@@ -17,7 +17,7 @@ function Layout({ children, className = '', title }: Props) {
         <title>{title}</title>
         <link rel="icon" href="/assets/favicon.png" />
       </Head>
-      <div className={`full-width column ${styles.containerApp} ${className}`}>{children}</div>
+      <div className={`full-width column ${styles.container} ${className}`}>{children}</div>
     </>
   );
 }
