@@ -12,8 +12,8 @@ module.exports = {
     rules.forEach((rule) => {
       rule.use.forEach((moduleLoader) => {
         if (
-          moduleLoader.loader.includes('css-loader/dist') &&
-          typeof moduleLoader.options.modules === 'object'
+          moduleLoader.loader?.includes('css-loader') &&
+          typeof moduleLoader.options?.modules === 'object'
         ) {
           moduleLoader.options = {
             ...moduleLoader.options,
