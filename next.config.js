@@ -4,6 +4,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.resolve(__dirname, 'scss')]
   },
+  pageExtensions: ['page.tsx'],
   webpack: (config) => {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')
