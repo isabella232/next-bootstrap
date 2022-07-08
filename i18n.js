@@ -4,5 +4,6 @@ module.exports = {
   pages: {
     '/': ['home'],
     'rgx:^/example': ['example', 'dynamic']
-  }
+  },
+  extensionsRgx: /\.page\.(tsx)$/
 };
