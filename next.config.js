@@ -1,6 +1,7 @@
 const path = require('path');
+const nextTranslate = require('next-translate')
 
-module.exports = {
+module.exports = nextTranslate({
   sassOptions: {
     includePaths: [path.resolve(__dirname, 'scss')]
   },
@@ -29,4 +30,4 @@ module.exports = {
 
     return config;
   }
-};
+});

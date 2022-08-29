@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 
 import Layout from '~components/Layout';
 import { PATHS } from '~constants/paths';
@@ -12,18 +13,17 @@ interface Props {
 // Example dynamic route component
 function ExampleDetail({ data }: Props) {
   const { query } = useRouter();
+  const { t } = useTranslation('dynamic');
   const queryShow = query && Object.entries(query).find((key) => key[0] === 'foo');
 
   return (
     <Layout title={`Example ${data.id}`} className="column center middle">
-      <h1>Example: {data.id}</h1>
-      {queryShow && (
-        <h2>
-          I have query params: {queryShow[0]}: {queryShow[1]}
-        </h2>
-      )}
-      <Link href={PATHS.home}>
-        <span className="link">Back to home</span>
+      <h1>{t('title', { id: data.id })}</h1>
+      {queryShow && <h2>{t('text', { query: queryShow[0], value: queryShow[1] })}</h2>}
+      <Link href={PATHS.home} passHref>
+        <a href="replace" className="link">
+          {t('backButton')}
+        </a>
       </Link>
     </Layout>
   );
